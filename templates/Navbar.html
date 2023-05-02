@@ -1,10 +1,13 @@
 {% load static %}
 
-<nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-      <BoscoNews></BoscoNews>
-    </a>
-  </div>
+<link href="{% static 'styles/navbar.css' %}" rel="stylesheet">
+
+<nav class="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'images/CE_Logo.svg' %}" alt="Logo" width="30" height="24"
+                 class="d-inline-block align-text-top">
+            BoscoNews
+        </a>
+    </div>
 </nav>
