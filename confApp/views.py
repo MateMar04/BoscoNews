@@ -4,7 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def home_screen_view(request):
-    return render(request, 'Home.html')
+    return render(request, 'Inicio.html')
 
 
 def novedades_screen_view(request):
