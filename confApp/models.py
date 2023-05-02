@@ -1,21 +1,26 @@
+# This is an auto-generated Django model module.
+# You'll have to do the following manually to clean this up:
+#   * Rearrange models' order
+#   * Make sure each model has one field with primary_key=True
+#   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
+#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
+# Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
 
-# Create your models here.
+class Author(models.Model):
+    first_name = models.TextField(blank=True, null=True)
+    last_name = models.TextField(blank=True, null=True)
+
 
 class Category(models.Model):
-    name = models.TextField(),
-    description = models.TextField()
-
-
-class Author(models.Model):
-    first_name = models.TextField(),
-    last_name = models.TextField()
+    name = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
 
 
 class New(models.Model):
-    title = models.TextField(),
-    body = models.TextField(),
-    publish_date = models.DateField(),
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    title = models.TextField(blank=True, null=True)
+    body = models.TextField(blank=True, null=True)
+    publish_date = models.DateField(blank=True, null=True)
+    category = models.ForeignKey(Category, models.DO_NOTHING, db_column='category', blank=True, null=True)
+    author = models.ForeignKey(Author, models.DO_NOTHING, db_column='author', blank=True, null=True)

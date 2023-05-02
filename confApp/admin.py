@@ -6,7 +6,6 @@ from .models import New
 
 
 # Register your models here.
-
 class NewAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'body', 'publish_date', 'category', 'author',)
     search_fields = ('id', 'title', 'publish_date', 'category', 'author',)
