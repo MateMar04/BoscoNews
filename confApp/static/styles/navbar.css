@@ -9,3 +9,16 @@
 .navbar-brand {
     color: #0C1713;
 }
+
+.nav-link {
+    color: #0C1713;
+}
+
+.navbar-brand:hover {
+    color: #D4F5F5;
+}
+
+.nav-link:hover {
+    color: #D4F5F5;
+}
+
