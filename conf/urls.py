@@ -20,5 +20,8 @@ from confApp.views import home_screen_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_screen_view, name='home')
+    path('', home_screen_view, name='home'),
+    path('novedades/', home_screen_view, name='novedades'),
+    path('centro-estudiantes/', home_screen_view, name='centro-estudiantes'),
+    path('deportes/', home_screen_view, name='deportes'),
 ]
