@@ -13,7 +13,10 @@ def home_screen_view(request):
 
 
 def novedades_screen_view(request):
-    return render(request, 'Novedades.html')
+    category = Category.objects.get(id=3)
+    news = New.objects.filter(category=category)
+    authors = Author.objects.all()
+    return render(request, 'Novedades.html', context={'new': news, 'authors': authors, 'categories': category})
 
 
 def centro_estudiantes_screen_view(request):
