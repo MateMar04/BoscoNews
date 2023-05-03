@@ -16,3 +16,12 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+
+.body {
+    width: 100%;
+}
+
+.body-text {
+    width: 100%;
+    word-wrap: break-word;
+}
