@@ -12,10 +12,16 @@ class Author(models.Model):
     first_name = models.TextField(blank=True, null=True)
     last_name = models.TextField(blank=True, null=True)
 
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} "
+
 
 class Category(models.Model):
     name = models.TextField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.name}"
 
 
 class New(models.Model):

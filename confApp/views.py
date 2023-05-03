@@ -1,10 +1,15 @@
 from django.shortcuts import render
 
+from .models import *
+
 
 # Create your views here.
 
 def home_screen_view(request):
-    return render(request, 'Inicio.html')
+    news = New.objects.all()
+    authors = Author.objects.all()
+    categories = Category.objects.all()
+    return render(request, 'Inicio.html', context={'new': news, 'authors': authors, 'categories': categories})
 
 
 def novedades_screen_view(request):
