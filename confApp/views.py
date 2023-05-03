@@ -8,7 +8,7 @@ def home_screen_view(request):
 
 
 def novedades_screen_view(request):
-    return render(request, 'novedades.html')
+    return render(request, 'Novedades.html')
 
 
 def centro_estudiantes_screen_view(request):
