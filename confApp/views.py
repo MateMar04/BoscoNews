@@ -20,8 +20,14 @@ def novedades_screen_view(request):
 
 
 def centro_estudiantes_screen_view(request):
-    return render(request, 'Centro-Estudiantes.html')
+    category = Category.objects.get(id=1)
+    news = New.objects.filter(category=category)
+    authors = Author.objects.all()
+    return render(request, 'Centro-Estudiantes.html', context={'new': news, 'authors': authors, 'categories': category})
 
 
 def deportes_screen_view(request):
-    return render(request, 'Deportes.html')
+    category = Category.objects.get(id=2)
+    news = New.objects.filter(category=category)
+    authors = Author.objects.all()
+    return render(request, 'Deportes.html', context={'new': news, 'authors': authors, 'categories': category})
