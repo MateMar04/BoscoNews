@@ -30,3 +30,10 @@ class New(models.Model):
     publish_date = models.DateField(blank=True, null=True)
     category = models.ForeignKey(Category, models.DO_NOTHING, db_column='category', blank=True, null=True)
     author = models.ForeignKey(Author, models.DO_NOTHING, db_column='author', blank=True, null=True)
+
+
+class Image(models.Model):
+    name = models.TextField()
+    description = models.TextField()
+    image = models.ImageField()
+    new = models.ForeignKey(New, models.DO_NOTHING)

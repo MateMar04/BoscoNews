@@ -3,6 +3,7 @@ from django.contrib import admin
 from .models import Author
 from .models import Category
 from .models import New
+from .models import Image
 
 
 # Register your models here.
@@ -27,6 +28,14 @@ class CategoryAdmin(admin.ModelAdmin):
     list_per_page = 10
 
 
+class ImageAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'description', 'image', 'new',)
+    search_fields = ('id', 'name', 'description', 'new',)
+    list_filter = ('id', 'name', 'description', 'new',)
+    list_per_page = 10
+
+
 admin.site.register(New, NewAdmin)
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Image, ImageAdmin)
