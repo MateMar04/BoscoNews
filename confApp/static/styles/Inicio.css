@@ -12,6 +12,7 @@
 
 .new-title-container {
     margin: 0;
+    color: #0c1713;
     background-color: #C44536;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -22,6 +23,7 @@
 }
 
 .body-text {
+    color: #0c1713;
     width: 100%;
     word-wrap: break-word;
 }
