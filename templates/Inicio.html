@@ -24,6 +24,9 @@
         <div class="container-fluid new-title-container">
             <h1>{{ n.title }}</h1>
         </div>
+        <div class="container-fluid">
+            <h5>{{ n.subtitle }}</h5>
+        </div>
         <div class="container-fluid body">
             <p class="body-text">
                 {{n.body}}
@@ -32,14 +35,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-4">
-                    {{ n.author }}
+                    <b>Autor:</b> {{ n.author }}
                 </div>
                 <div class="col-lg-3">
-                    {{ n.publish_date }}
+                    <b>Fecha de publicación:</b> {{ n.publish_date }}
                 </div>
             </div>
             <div class="col-lg-3">
-                {{ n.category }}
+                <b>Categoria:</b> {{ n.category }}
             </div>
         </div>
     </div>

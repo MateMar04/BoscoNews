@@ -29,9 +29,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class ImageAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'description', 'image', 'new',)
-    search_fields = ('id', 'name', 'description', 'new',)
-    list_filter = ('id', 'name', 'description', 'new',)
+    list_display = ('id', 'name', 'epigraph', 'image', 'new',)
+    search_fields = ('id', 'name', 'epigraph', 'new',)
+    list_filter = ('id', 'name', 'epigraph', 'new',)
     list_per_page = 10
 
 
