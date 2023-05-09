@@ -5,9 +5,10 @@
 
 .new {
     margin-top: 5vh;
-    background-color: #d4f5f5;
+    background-color: #E7ECEF;
     padding: 0;
     border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
 }
 
 .new-title-container {
