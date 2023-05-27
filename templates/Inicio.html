@@ -49,7 +49,7 @@
         {% if image.new == n %}
         <div>
             <p>{{ image.image }}</p>
-            <img src="{{ image.image }}">
+            <img src="{{ image.image.url }}">
         </div>
         {% endif %}
         {% endfor %}
