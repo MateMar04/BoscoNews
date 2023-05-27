@@ -15,7 +15,7 @@ def home_screen_view(request):
 
 
 def novedades_screen_view(request):
-    category = Category.objects.get(id=3)
+    category = Category.objects.get(name='General')
     news = New.objects.filter(category=category)
     authors = Author.objects.all()
     images = Image.objects.all()
@@ -24,7 +24,7 @@ def novedades_screen_view(request):
 
 
 def centro_estudiantes_screen_view(request):
-    category = Category.objects.get(id=1)
+    category = Category.objects.get(name='Centro de Estudiantes')
     news = New.objects.filter(category=category)
     authors = Author.objects.all()
     images = Image.objects.all()
@@ -36,4 +36,5 @@ def deportes_screen_view(request):
     category = Category.objects.get(name='Deportes')
     news = New.objects.filter(category=category)
     authors = Author.objects.all()
-    return render(request, 'Inicio.html', context={'new': news, 'authors': authors, 'categories': category})
+    images = Image.objects.all()
+    return render(request, 'Inicio.html', context={'new': news, 'authors': authors, 'categories': category, 'images': images})

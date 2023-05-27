@@ -45,6 +45,14 @@
                 <b>Categoria:</b> {{ n.category }}
             </div>
         </div>
+        {% for image in images %}
+        {% if image.new == n %}
+        <div>
+            <p>{{ image.image }}</p>
+            <img src="{{ image.image }}">
+        </div>
+        {% endif %}
+        {% endfor %}
     </div>
     {% endfor %}
 </div>

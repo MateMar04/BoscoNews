@@ -28,6 +28,6 @@ class New(models.Model):
 
 class Image(models.Model):
     name = models.TextField()
-    image = models.ImageField()
+    image = models.ImageField(upload_to='confApp/files/news_images')
     epigraph = models.TextField()
     new = models.ForeignKey(New, models.DO_NOTHING)
