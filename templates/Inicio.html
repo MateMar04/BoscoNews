@@ -25,26 +25,13 @@
                 <h1>{{ n.title }}</h1>
             </div>
             <div class="container-fluid content">
-                <div class="container-fluid">
+                <div class="container-fluid subtitle">
                     <h5>{{ n.subtitle }}</h5>
                 </div>
                 <div class="container-fluid body">
                     <p class="body-text">
                         {{ n.body }}
                     </p>
-                </div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <b>Autor:</b> {{ n.author }}
-                        </div>
-                        <div class="col-lg-3">
-                            <b>Fecha de publicación:</b> {{ n.publish_date }}
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <b>Categoria:</b> {{ n.category }}
-                    </div>
                 </div>
                 <div class="container-fluid carousel-container">
                     <div id="carouselExample" class="carousel slide">
@@ -57,6 +44,27 @@
                                 {% endif %}
                             {% endfor %}
                         </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
+                </div>
+                <div class="container-fluid new-footer">
+                    <div class="container-fluid autor">
+                        <b>Autor:</b> {{ n.author }}
+                    </div>
+                    <div class="container-fluid fecha-publicacion">
+                        <b>Fecha de publicación:</b> {{ n.publish_date }}
+                    </div>
+                    <div class="container-fluid categoria">
+                        <b>Categoria:</b> {{ n.category }}
                     </div>
                 </div>
             </div>

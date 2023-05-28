@@ -23,7 +23,18 @@
     padding-bottom: 2vh;
 }
 
+.subtitle {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
 .body {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
     width: 100%;
 }
 
@@ -31,6 +42,13 @@
     color: #0c1713;
     width: 100%;
     word-wrap: break-word;
+}
+
+.carousel-container {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
 
 .carousel {
@@ -51,4 +69,25 @@
     width: auto;
     object-fit: cover;
     max-height: 50vh;
+}
+
+.new-footer {
+    margin-top: 3vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.autor {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.categoria {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.fecha-publicacion {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
