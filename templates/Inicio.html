@@ -13,37 +13,57 @@
 
 </head>
 <body>
+
+<!-- NAVBAR -->
 {% include 'components/Navbar.html' %}
 
+<!-- CSRF TOKEN -->
 {% csrf_token %}
 
 
 <div class="container-fluid general">
+
     {% for n in new %}
+
+        <!-- NEW -->
         <div class="container-fluid new">
+
+            <!-- TITLE -->
             <div class="container-fluid new-title-container">
                 <h1>{{ n.title }}</h1>
             </div>
+
+            <!-- CONTENT -->
             <div class="container-fluid content">
+
+                <!-- SUBTITLE -->
                 <div class="container-fluid subtitle">
                     <h5>{{ n.subtitle }}</h5>
                 </div>
+
+                <!-- BODY -->
                 <div class="container-fluid body">
                     <p class="body-text">
                         {{ n.body }}
                     </p>
                 </div>
+
+                <!-- CAROUSEL -->
                 <div class="container-fluid carousel-container">
                     <div id="carouselExample{{ n.id }}" class="carousel slide">
                         <div class="carousel-inner">
                             {% for i in images %}
                                 {% if i.new == n %}
+
+                                    <!-- IMAGE -->
                                     <div class="carousel-item active">
                                         <img src="{{ i.image.url }}" class="d-block w-100" alt="">
                                     </div>
                                 {% endif %}
                             {% endfor %}
                         </div>
+
+                        <!-- CAROUSEL CONTROLS -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample{{ n.id }}"
                                 data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -56,13 +76,21 @@
                         </button>
                     </div>
                 </div>
+
+                <!-- NEW FOOTER -->
                 <div class="container-fluid new-footer">
+
+                    <!-- AUTHOR -->
                     <div class="container-fluid author">
                         <b>Autor:</b> {{ n.author }}
                     </div>
+
+                    <!-- PUBLISH DATE -->
                     <div class="container-fluid publish-date">
                         <b>Fecha de publicación:</b> {{ n.publish_date }}
                     </div>
+
+                    <!-- CATEGORY -->
                     <div class="container-fluid category">
                         <b>Categoria:</b> {{ n.category }}
                     </div>
