@@ -34,7 +34,7 @@
                     </p>
                 </div>
                 <div class="container-fluid carousel-container">
-                    <div id="carouselExample" class="carousel slide">
+                    <div id="carouselExample{{ n.id }}" class="carousel slide">
                         <div class="carousel-inner">
                             {% for i in images %}
                                 {% if i.new == n %}
@@ -44,26 +44,26 @@
                                 {% endif %}
                             {% endfor %}
                         </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                            data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                            data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample{{ n.id }}"
+                                data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample{{ n.id }}"
+                                data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
                 <div class="container-fluid new-footer">
-                    <div class="container-fluid autor">
+                    <div class="container-fluid author">
                         <b>Autor:</b> {{ n.author }}
                     </div>
-                    <div class="container-fluid fecha-publicacion">
+                    <div class="container-fluid publish-date">
                         <b>Fecha de publicación:</b> {{ n.publish_date }}
                     </div>
-                    <div class="container-fluid categoria">
+                    <div class="container-fluid category">
                         <b>Categoria:</b> {{ n.category }}
                     </div>
                 </div>
