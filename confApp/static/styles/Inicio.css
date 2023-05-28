@@ -28,3 +28,23 @@
     width: 100%;
     word-wrap: break-word;
 }
+
+.carousel {
+    max-height: 50vh;
+}
+
+.carousel-inner {
+    max-height: 50vh;
+
+}
+
+.carousel-item {
+    max-height: 50vh;
+}
+
+.d-block {
+    height: auto;
+    width: auto;
+    object-fit: cover;
+    max-height: 50vh;
+}
