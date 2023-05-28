@@ -17,6 +17,8 @@ Including another URLconf
 from confApp.views import home_screen_view, novedades_screen_view, centro_estudiantes_screen_view, deportes_screen_view
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,3 +27,5 @@ urlpatterns = [
     path('centro-estudiantes/', centro_estudiantes_screen_view, name='centro-estudiantes'),
     path('deportes/', deportes_screen_view, name='deportes'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
