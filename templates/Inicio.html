@@ -20,40 +20,40 @@
 
 <div class="container-fluid general">
     {% for n in new %}
-    <div class="container-fluid new">
-        <div class="container-fluid new-title-container">
-            <h1>{{ n.title }}</h1>
-        </div>
-        <div class="container-fluid">
-            <h5>{{ n.subtitle }}</h5>
-        </div>
-        <div class="container-fluid body">
-            <p class="body-text">
-                {{n.body}}
-            </p>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4">
-                    <b>Autor:</b> {{ n.author }}
+        <div class="container-fluid new">
+            <div class="container-fluid new-title-container">
+                <h1>{{ n.title }}</h1>
+            </div>
+            <div class="container-fluid">
+                <h5>{{ n.subtitle }}</h5>
+            </div>
+            <div class="container-fluid body">
+                <p class="body-text">
+                    {{ n.body }}
+                </p>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <b>Autor:</b> {{ n.author }}
+                    </div>
+                    <div class="col-lg-3">
+                        <b>Fecha de publicación:</b> {{ n.publish_date }}
+                    </div>
                 </div>
                 <div class="col-lg-3">
-                    <b>Fecha de publicación:</b> {{ n.publish_date }}
+                    <b>Categoria:</b> {{ n.category }}
                 </div>
             </div>
-            <div class="col-lg-3">
-                <b>Categoria:</b> {{ n.category }}
-            </div>
+            {% for image in images %}
+                {% if image.new == n %}
+                    <div>
+                        <p>{{ image.image }}</p>
+                        <img src="{{ image.image.url }}">
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
-        {% for image in images %}
-        {% if image.new == n %}
-        <div>
-            <p>{{ image.image }}</p>
-            <img src="{{ image.image.url }}">
-        </div>
-        {% endif %}
-        {% endfor %}
-    </div>
     {% endfor %}
 </div>
 
