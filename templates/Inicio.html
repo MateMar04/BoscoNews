@@ -24,36 +24,40 @@
             <div class="container-fluid new-title-container">
                 <h1>{{ n.title }}</h1>
             </div>
-            <div class="container-fluid">
-                <h5>{{ n.subtitle }}</h5>
-            </div>
-            <div class="container-fluid body">
-                <p class="body-text">
-                    {{ n.body }}
-                </p>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <b>Autor:</b> {{ n.author }}
+            <div class="container-fluid content">
+                <div class="container-fluid">
+                    <h5>{{ n.subtitle }}</h5>
+                </div>
+                <div class="container-fluid body">
+                    <p class="body-text">
+                        {{ n.body }}
+                    </p>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <b>Autor:</b> {{ n.author }}
+                        </div>
+                        <div class="col-lg-3">
+                            <b>Fecha de publicación:</b> {{ n.publish_date }}
+                        </div>
                     </div>
                     <div class="col-lg-3">
-                        <b>Fecha de publicación:</b> {{ n.publish_date }}
+                        <b>Categoria:</b> {{ n.category }}
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <b>Categoria:</b> {{ n.category }}
-                </div>
-            </div>
-            <div id="carouselExample" class="carousel slide">
-                <div class="carousel-inner">
-                    {% for i in images %}
-                        {% if i.new == n %}
-                            <div class="carousel-item active">
-                                <img src="{{ i.image.url }}" class="d-block w-100" alt="">
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+                <div class="container-fluid carousel-container">
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                            {% for i in images %}
+                                {% if i.new == n %}
+                                    <div class="carousel-item active">
+                                        <img src="{{ i.image.url }}" class="d-block w-100" alt="">
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
