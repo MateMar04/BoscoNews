@@ -13,21 +13,33 @@
 
 .new-title-container {
     margin: 0;
+    padding: 0.5vw;
+    text-align: start;
     color: #0c1713;
     background-color: #C44536;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
+.title-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
 .content {
     padding-bottom: 2vh;
 }
 
-.subtitle {
+.subtitle-container {
+    font-size: 2rem;
     margin-top: 2vh;
     margin-bottom: 1vh;
     margin-left: 1vw;
     margin-right: 1vw;
+}
+
+.subtitle {
+    font-size: 2rem;
 }
 
 .body {
@@ -36,6 +48,7 @@
     margin-left: 1vw;
     margin-right: 1vw;
     width: 100%;
+    font-size: 1.3rem;
 }
 
 .body-text {
@@ -52,23 +65,23 @@
 }
 
 .carousel {
-    max-height: 50vh;
+    max-height: 60vh;
 }
 
 .carousel-inner {
-    max-height: 50vh;
+    max-height: 60vh;
     border-radius: 20px;
 }
 
 .carousel-item {
-    max-height: 50vh;
+    max-height: 60vh;
 }
 
 .d-block {
     height: auto;
     width: auto;
     object-fit: cover;
-    max-height: 50vh;
+    max-height: 60vh;
 }
 
 .epigraph {
@@ -77,9 +90,11 @@
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
     border-radius: 7px;
+    font-size: 1.2rem;
 }
 
 .new-footer {
+    font-size: 1.2rem;
     margin-top: 3vh;
     margin-left: 1vw;
     margin-right: 1vw;
