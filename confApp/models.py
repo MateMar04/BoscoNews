@@ -25,9 +25,15 @@ class New(models.Model):
     category = models.ForeignKey(Category, models.DO_NOTHING, db_column='category', blank=True, null=True)
     author = models.ForeignKey(Author, models.DO_NOTHING, db_column='author', blank=True, null=True)
 
+    def __str__(self):
+        return f"{self.title}"
+
 
 class Image(models.Model):
     name = models.TextField()
     image = models.ImageField()
     epigraph = models.TextField()
     new = models.ForeignKey(New, models.DO_NOTHING)
+
+    def __str__(self):
+        return f"{self.name}"
