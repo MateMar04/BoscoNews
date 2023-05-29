@@ -71,6 +71,14 @@
     max-height: 50vh;
 }
 
+.epigraph {
+    color: black;
+    font-weight: bolder;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+    border-radius: 7px;
+}
+
 .new-footer {
     margin-top: 3vh;
     margin-left: 1vw;
