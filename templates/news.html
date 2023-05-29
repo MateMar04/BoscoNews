@@ -51,7 +51,26 @@
                 {% count_new_images n as c_images %}
 
                 {% if c_images == 1 %}
+                    <div class="container-fluid carousel-container">
+                        <div id="carouselExample{{ n.id }}" class="carousel slide">
+                            <div class="carousel-inner">
+                                {% for i in images %}
+                                    {% if i.new == n %}
 
+                                        <!-- IMAGE -->
+                                        <div class="carousel-item active">
+                                            <img src="{{ i.image.url }}" class="d-block w-100" alt="">
+
+
+                                            <div class="carousel-caption d-none d-md-block epigraph-container">
+                                                <p class="epigraph">{{ i.epigraph }}</p>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
 
 
                 {% elif c_images > 1 %}
@@ -90,7 +109,6 @@
                         </div>
                     </div>
                 {% else %}
-                    <p>NO FOTO</p>
                 {% endif %}
 
                 <!-- NEW FOOTER -->
