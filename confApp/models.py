@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 class Author(models.Model):
@@ -20,7 +21,7 @@ class Category(models.Model):
 class New(models.Model):
     title = models.TextField(blank=True, null=True)
     subtitle = models.TextField(blank=True, null=True)
-    body = models.TextField(blank=True, null=True)
+    body = RichTextField()
     publish_date = models.DateField(blank=True, null=True)
     category = models.ForeignKey(Category, models.DO_NOTHING, db_column='category', blank=True, null=True)
     author = models.ForeignKey(Author, models.DO_NOTHING, db_column='author', blank=True, null=True)
