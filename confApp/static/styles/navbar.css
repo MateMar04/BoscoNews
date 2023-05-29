@@ -1,5 +1,5 @@
 * {
-    font-family: Roboto, sans-serif;
+    font-family: Poppins;
 }
 
 .navbar {
@@ -7,11 +7,15 @@
 }
 
 .navbar-brand {
-    color: #0C1713;
+    color: #0c1713;
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 .nav-link {
     color: #0C1713;
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
 .navbar-brand:hover {
