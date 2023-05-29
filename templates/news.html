@@ -1,4 +1,5 @@
 {% load static %}
+{% load new_tags %}
 
 <html lang="en">
 <head>
@@ -47,7 +48,14 @@
                 </div>
 
                 <!-- CAROUSEL -->
-                <div class="container-fluid carousel-container">
+                {% count_new_images n as c_images %}
+
+                {% if c_images == 1 %}
+
+                    <p>UNA SOLA IMAGEN</p>
+
+                {% elif c_images > 1 %}
+                    <div class="container-fluid carousel-container">
                     <div id="carouselExample{{ n.id }}" class="carousel slide">
                         <div class="carousel-inner">
                             {% for i in images %}
@@ -79,6 +87,9 @@
                         </button>
                     </div>
                 </div>
+                {% else %}
+                    <p>NO FOTO</p>
+                {% endif %}
 
                 <!-- NEW FOOTER -->
                 <div class="container-fluid new-footer">
