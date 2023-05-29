@@ -43,9 +43,7 @@
 
                 <!-- BODY -->
                 <div class="container-fluid body">
-                    <p class="body-text">
-                        {{ n.body }}
-                    </p>
+                    {{ n.body|safe }}
                 </div>
 
                 <!-- CAROUSEL -->
