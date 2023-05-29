@@ -47,10 +47,11 @@
                     {{ n.body|safe }}
                 </div>
 
-                <!-- CAROUSEL -->
                 {% count_new_images n as c_images %}
 
                 {% if c_images == 1 %}
+
+                    <!-- CAROUSEL -->
                     <div class="container-fluid carousel-container">
                         <div id="carouselExample{{ n.id }}" class="carousel slide">
                             <div class="carousel-inner">
@@ -74,6 +75,8 @@
 
 
                 {% elif c_images > 1 %}
+
+                    <!-- CAROUSEL -->
                     <div class="container-fluid carousel-container">
                         <div id="carouselExample{{ n.id }}" class="carousel slide">
                             <div class="carousel-inner">
