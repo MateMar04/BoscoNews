@@ -10,7 +10,7 @@ def home_screen_view(request):
     authors = Author.objects.all()
     categories = Category.objects.all()
     images = Image.objects.all()
-    return render(request, 'Inicio.html',
+    return render(request, 'landing.html',
                   context={'new': news, 'authors': authors, 'categories': categories, 'images': images})
 
 
@@ -19,7 +19,7 @@ def novedades_screen_view(request):
     news = New.objects.filter(category=category)
     authors = Author.objects.all()
     images = Image.objects.all()
-    return render(request, 'Inicio.html',
+    return render(request, 'news.html',
                   context={'new': news, 'authors': authors, 'categories': category, 'images': images})
 
 
@@ -28,7 +28,7 @@ def centro_estudiantes_screen_view(request):
     news = New.objects.filter(category=category)
     authors = Author.objects.all()
     images = Image.objects.all()
-    return render(request, 'Inicio.html',
+    return render(request, 'news.html',
                   context={'new': news, 'authors': authors, 'categories': category, 'images': images})
 
 
@@ -37,4 +37,5 @@ def deportes_screen_view(request):
     news = New.objects.filter(category=category)
     authors = Author.objects.all()
     images = Image.objects.all()
-    return render(request, 'Inicio.html', context={'new': news, 'authors': authors, 'categories': category, 'images': images})
+    return render(request, 'news.html',
+                  context={'new': news, 'authors': authors, 'categories': category, 'images': images})
