@@ -13,3 +13,9 @@ def count_news():
 @register.simple_tag
 def count_new_images(new):
     return Image.objects.filter(new=new).count()
+
+
+@register.simple_tag
+def get_new_images(new):
+    images = Image.objects.filter(new=new)
+    return images
