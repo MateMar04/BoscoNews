@@ -1,0 +1,27 @@
+.general {
+    padding-top: 4vh;
+    padding-bottom: 2vh;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+}
+
+.category {
+    color: #C44536;
+    font-style: italic;
+}
+
+.see-more {
+    color: white;
+    background-color: #C44536;
+    border: #C44536;
+}
+
+.see-more:hover {
+    color: white;
+    background-color: #790005;
+    border: #400406;
+}

@@ -39,3 +39,9 @@ def deportes_screen_view(request):
     images = Image.objects.all()
     return render(request, 'news.html',
                   context={'new': news, 'authors': authors, 'categories': category, 'images': images})
+
+
+def new_screen_view(request, new_id):
+    news = New.objects.get(id=new_id)
+    images = Image.objects.filter(new=new_id)
+    return render(request, 'new.html', context={'new': news, 'images': images})

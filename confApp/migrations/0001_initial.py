@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -36,8 +35,10 @@ class Migration(migrations.Migration):
                 ('subtitle', models.TextField(blank=True, null=True)),
                 ('body', models.TextField(blank=True, null=True)),
                 ('publish_date', models.DateField(blank=True, null=True)),
-                ('author', models.ForeignKey(blank=True, db_column='author', null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='confApp.author')),
-                ('category', models.ForeignKey(blank=True, db_column='category', null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='confApp.category')),
+                ('author', models.ForeignKey(blank=True, db_column='author', null=True,
+                                             on_delete=django.db.models.deletion.DO_NOTHING, to='confApp.author')),
+                ('category', models.ForeignKey(blank=True, db_column='category', null=True,
+                                               on_delete=django.db.models.deletion.DO_NOTHING, to='confApp.category')),
             ],
         ),
         migrations.CreateModel(
