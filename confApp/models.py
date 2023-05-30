@@ -21,6 +21,7 @@ class Category(models.Model):
 class New(models.Model):
     title = models.TextField(blank=True, null=True)
     subtitle = models.TextField(blank=True, null=True)
+    new_abstract = models.TextField(blank=True, null=True)
     body = RichTextField()
     publish_date = models.DateField(blank=True, null=True)
     category = models.ForeignKey(Category, models.DO_NOTHING, db_column='category', blank=True, null=True)
