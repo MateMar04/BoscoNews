@@ -22,8 +22,20 @@
 {% csrf_token %}
 
 <div class="container-fluid">
-    <p>{% count_news %}</p>
-
+    <div class="row row-cols-1 row-cols-lg-2 g-4">
+        {% for n in new %}
+            {% get_cover n as cover %}
+            <div class="col">
+                <div class="card">
+                    <img src="{{ cover.image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ n.title }}</h5>
+                        <p class="card-text">{{ n.subtitle }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 </div>
 
 <!-- SCRIPTS -->

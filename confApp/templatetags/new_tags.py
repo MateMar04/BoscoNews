@@ -29,3 +29,9 @@ def define_counter():
 @register.simple_tag
 def increment_counter(counter):
     return counter + 1
+
+
+@register.simple_tag
+def get_cover(n):
+    image = Image.objects.filter(new=n).first()
+    return image
