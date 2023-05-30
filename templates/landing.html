@@ -34,7 +34,7 @@
                         <p class="card-text">{{ n.subtitle }}</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ url  }}" class="btn see-more">Ver más</a>
+                        <a href="{% url 'new' n.id %}" class="btn see-more">Ver más</a>
                     </div>
                 </div>
             </div>
