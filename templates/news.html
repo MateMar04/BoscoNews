@@ -29,61 +29,61 @@
         <!-- NEW -->
         <div class="container-fluid new">
 
-            <!-- TITLE -->
-            <div class="container-fluid new-title-container">
-                <h1 class="title-text">{{ n.title.upper }}</h1>
+        <!-- TITLE -->
+        <div class="container-fluid new-title-container">
+            <h1 class="title-text">{{ n.title.upper }}</h1>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="container-fluid content">
+
+            <!-- SUBTITLE -->
+            <div class="container-fluid subtitle-container">
+                <h5 class="subtitle">{{ n.subtitle }}</h5>
             </div>
 
-            <!-- CONTENT -->
-            <div class="container-fluid content">
+            <!-- BODY -->
+            <div class="container-fluid body">
+                {{ n.body|safe }}
+            </div>
 
-                <!-- SUBTITLE -->
-                <div class="container-fluid subtitle-container">
-                    <h5 class="subtitle">{{ n.subtitle }}</h5>
-                </div>
+            {% count_new_images n as c_images %}
 
-                <!-- BODY -->
-                <div class="container-fluid body">
-                    {{ n.body|safe }}
-                </div>
+            {% if c_images == 1 %}
 
-                {% count_new_images n as c_images %}
+                <!-- CAROUSEL -->
+                <div class="container-fluid carousel-container">
+                    <div id="carouselExample{{ n.id }}" class="carousel slide">
+                        <div class="carousel-inner">
+                            {% for i in images %}
+                                {% if i.new == n %}
 
-                {% if c_images == 1 %}
+                                    <!-- IMAGE -->
+                                    <div class="carousel-item active">
+                                        <img src="{{ i.image.url }}" class="d-block w-100" alt="">
 
-                    <!-- CAROUSEL -->
-                    <div class="container-fluid carousel-container">
-                        <div id="carouselExample{{ n.id }}" class="carousel slide">
-                            <div class="carousel-inner">
-                                {% for i in images %}
-                                    {% if i.new == n %}
-
-                                        <!-- IMAGE -->
-                                        <div class="carousel-item active">
-                                            <img src="{{ i.image.url }}" class="d-block w-100" alt="">
-
-                                            <!-- EPIGRAPH -->
-                                            <div class="carousel-caption d-none d-md-block epigraph-container">
-                                                <p class="epigraph">{{ i.epigraph }}</p>
-                                            </div>
+                                        <!-- EPIGRAPH -->
+                                        <div class="carousel-caption d-none d-md-block epigraph-container">
+                                            <p class="epigraph">{{ i.epigraph }}</p>
                                         </div>
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
+                </div>
 
 
-                {% elif c_images > 1 %}
+            {% elif c_images > 1 %}
 
-                    {% get_new_images n as images %}
+                {% get_new_images n as images %}
 
-                    <!-- CAROUSEL -->
+                <!-- CAROUSEL -->
 
-                    {% define_counter as counter %}
+                {% define_counter as counter %}
 
-                    <div class="container-fluid carousel-container">
-                    <div id="carouselExample{{ n.id }}" class="carousel slide">
+                <div class="container-fluid carousel-container">
+                <div id="carouselExample{{ n.id }}" class="carousel slide">
                     <div class="carousel-inner">
 
                         {% for i in images %}
@@ -109,44 +109,44 @@
                             {% endif %}
                         {% endfor %}
                     </div>
-                {% else %}
-                {% endif %}
-                <!-- CAROUSEL CONTROLS -->
-                <button class="carousel-control-prev" type="button"
-                        data-bs-target="#carouselExample{{ n.id }}"
-                        data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button"
-                        data-bs-target="#carouselExample{{ n.id }}"
-                        data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
                 </div>
+            {% else %}
+            {% endif %}
+            <!-- CAROUSEL CONTROLS -->
+            <button class="carousel-control-prev" type="button"
+                    data-bs-target="#carouselExample{{ n.id }}"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button"
+                    data-bs-target="#carouselExample{{ n.id }}"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            </div>
+            <!-- NEW FOOTER -->
+            <div class="container-fluid new-footer">
+
+                <!-- AUTHOR -->
+                <div class="container-fluid author">
+                    <b>Autor:</b> {{ n.author }}
                 </div>
-                <!-- NEW FOOTER -->
-                <div class="container-fluid new-footer">
 
-                    <!-- AUTHOR -->
-                    <div class="container-fluid author">
-                        <b>Autor:</b> {{ n.author }}
-                    </div>
+                <!-- PUBLISH DATE -->
+                <div class="container-fluid publish-date">
+                    <b>Fecha de publicación:</b> {{ n.publish_date|safe }}
+                </div>
 
-                    <!-- PUBLISH DATE -->
-                    <div class="container-fluid publish-date">
-                        <b>Fecha de publicación:</b> {{ n.publish_date|safe }}
-                    </div>
-
-                    <!-- CATEGORY -->
-                    <div class="container-fluid category">
-                        <b>Categoria:</b> {{ n.category }}
-                    </div>
+                <!-- CATEGORY -->
+                <div class="container-fluid category">
+                    <b>Categoria:</b> {{ n.category }}
                 </div>
             </div>
         </div>
     {% endfor %}
+    </div>
 </div>
 
 
