@@ -79,41 +79,53 @@
                     {% get_new_images n as images %}
 
                     <!-- CAROUSEL -->
+
+                    {% define_counter as counter %}
+
                     <div class="container-fluid carousel-container">
-                        <div id="carouselExample{{ n.id }}" class="carousel slide">
-                            <div class="carousel-inner">
-                                {% for i in images %}
+                    <div id="carouselExample{{ n.id }}" class="carousel slide">
+                    <div class="carousel-inner">
 
-                                    <!-- IMAGE -->
-                                    <div class="carousel-item active">
-                                        <img src="{{ i.image.url }}" class="d-block w-100" alt="">
+                        {% for i in images %}
+                            {% if counter == 0 %}
+                                <div class="carousel-item active">
+                                    <img src="{{ i.image.url }}" class="d-block w-100" alt="">
 
-                                        <!-- EPIGRAPH -->
-                                        <div class="carousel-caption d-none d-md-block epigraph-container">
-                                            <p class="epigraph">{{ i.epigraph }}</p>
-                                        </div>
+                                    <!-- EPIGRAPH -->
+                                    <div class="carousel-caption d-none d-md-block epigraph-container">
+                                        <p class="epigraph">{{ i.epigraph }}</p>
                                     </div>
-                                {% endfor %}
-                            </div>
+                                </div>
+                                {% increment_counter counter as counter %}
+                            {% else %}
+                                <div class="carousel-item">
+                                    <img src="{{ i.image.url }}" class="d-block w-100" alt="">
 
-                            <!-- CAROUSEL CONTROLS -->
-                            <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExample{{ n.id }}"
-                                    data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExample{{ n.id }}"
-                                    data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
+                                    <!-- EPIGRAPH -->
+                                    <div class="carousel-caption d-none d-md-block epigraph-container">
+                                        <p class="epigraph">{{ i.epigraph }}</p>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 {% else %}
                 {% endif %}
-
+                <!-- CAROUSEL CONTROLS -->
+                <button class="carousel-control-prev" type="button"
+                        data-bs-target="#carouselExample{{ n.id }}"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button"
+                        data-bs-target="#carouselExample{{ n.id }}"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                </div>
                 <!-- NEW FOOTER -->
                 <div class="container-fluid new-footer">
 
