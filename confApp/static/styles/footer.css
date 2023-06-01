@@ -1,0 +1,10 @@
+footer {
+    background-color: #e8e8e8;
+    padding-top: 2vh;
+}
+
+.links {
+    align-items: center;
+    justify-content: center;
+    margin-right: 5vw;
+}
