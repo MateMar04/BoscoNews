@@ -11,8 +11,8 @@ class Author(models.Model):
 
 
 class Category(models.Model):
-    name = models.TextField(blank=True, null=True)
-    description = models.TextField(blank=True, null=True)
+    name = models.TextField()
+    description = models.TextField()
 
     def __str__(self):
         return f"{self.name}"
