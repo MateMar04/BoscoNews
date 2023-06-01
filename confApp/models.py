@@ -3,8 +3,8 @@ from ckeditor.fields import RichTextField
 
 
 class Author(models.Model):
-    first_name = models.TextField(blank=True, null=True)
-    last_name = models.TextField(blank=True, null=True)
+    first_name = models.TextField()
+    last_name = models.TextField()
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} "
