@@ -35,3 +35,9 @@ def increment_counter(counter):
 def get_cover(n):
     image = Image.objects.filter(new=n).first()
     return image
+
+
+@register.simple_tag
+def get_default_image():
+    image = Image.objects.get(name='Default')
+    return image

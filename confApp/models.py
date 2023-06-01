@@ -35,7 +35,7 @@ class Image(models.Model):
     name = models.TextField()
     image = models.ImageField()
     epigraph = models.TextField()
-    new = models.ForeignKey(New, models.DO_NOTHING)
+    new = models.ForeignKey(New, models.DO_NOTHING, blank=True, null=True)
 
     def __str__(self):
         return f"{self.name}"

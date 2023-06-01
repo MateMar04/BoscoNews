@@ -24,20 +24,38 @@
 <div class="container-fluid general">
     <div class="row row-cols-1 row-cols-lg-3 g-4">
         {% for n in new %}
-            {% get_cover n as cover %}
-            <div class="col">
-                <div class="card h-100">
-                    <img src="{{ cover.image.url }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="category">{{ n.category }}</h6>
-                        <h5 class="card-title">{{ n.title.upper }}</h5>
-                        <p class="card-text">{{ n.new_abstract }}</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="{% url 'new' n.id %}" class="btn see-more">Ver más</a>
+            {% count_new_images n as c_images %}
+            {% if c_images >= 1 %}
+                {% get_cover n as cover %}
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{{ cover.image.url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="category">{{ n.category }}</h6>
+                            <h5 class="card-title">{{ n.title.upper }}</h5>
+                            <p class="card-text">{{ n.new_abstract }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'new' n.id %}" class="btn see-more">Ver más</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% else %}
+                {% get_default_image as default %}
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{{ default.image.url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="category">{{ n.category }}</h6>
+                            <h5 class="card-title">{{ n.title.upper }}</h5>
+                            <p class="card-text">{{ n.new_abstract }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'new' n.id %}" class="btn see-more">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
         {% endfor %}
     </div>
 </div>
