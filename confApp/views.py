@@ -6,7 +6,7 @@ from .models import *
 # Create your views here.
 
 def home_screen_view(request):
-    news = New.objects.all()
+    news = New.objects.all().order_by('-id')
     authors = Author.objects.all()
     categories = Category.objects.all()
     images = Image.objects.all()
