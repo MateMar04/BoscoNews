@@ -19,13 +19,13 @@ class Category(models.Model):
 
 
 class New(models.Model):
-    title = models.TextField(blank=True, null=True)
-    subtitle = models.TextField(blank=True, null=True)
-    new_abstract = models.TextField(blank=True, null=True)
+    title = models.TextField()
+    new_abstract = models.TextField()
+    subtitle = models.TextField()
     body = RichTextField()
-    publish_date = models.DateField(blank=True, null=True)
-    category = models.ForeignKey(Category, models.DO_NOTHING, db_column='category', blank=True, null=True)
-    author = models.ForeignKey(Author, models.DO_NOTHING, db_column='author', blank=True, null=True)
+    publish_date = models.DateField()
+    category = models.ForeignKey(Category, models.DO_NOTHING, db_column='category')
+    author = models.ForeignKey(Author, models.DO_NOTHING, db_column='author')
 
     def __str__(self):
         return f"{self.title}"
@@ -34,7 +34,7 @@ class New(models.Model):
 class Image(models.Model):
     name = models.TextField()
     image = models.ImageField()
-    epigraph = models.TextField()
+    epigraph = models.TextField(blank=True, null=True)
     new = models.ForeignKey(New, models.DO_NOTHING, blank=True, null=True)
 
     def __str__(self):
