@@ -6,7 +6,7 @@ from .models import *
 # Create your views here.
 
 def home_screen_view(request):
-    news = New.objects.all().order_by('-id')
+    news = New.objects.all().order_by('-publish_date')
     authors = Author.objects.all()
     categories = Category.objects.all()
     images = Image.objects.all()
@@ -16,7 +16,7 @@ def home_screen_view(request):
 
 def novedades_screen_view(request):
     category = Category.objects.get(name='General')
-    news = New.objects.filter(category=category)
+    news = New.objects.filter(category=category).order_by('-publish_date')
     authors = Author.objects.all()
     images = Image.objects.all()
     return render(request, 'news.html',
@@ -25,7 +25,7 @@ def novedades_screen_view(request):
 
 def centro_estudiantes_screen_view(request):
     category = Category.objects.get(name='Centro de Estudiantes')
-    news = New.objects.filter(category=category)
+    news = New.objects.filter(category=category).order_by('-publish_date')
     authors = Author.objects.all()
     images = Image.objects.all()
     return render(request, 'news.html',
@@ -34,7 +34,7 @@ def centro_estudiantes_screen_view(request):
 
 def deportes_screen_view(request):
     category = Category.objects.get(name='Deportes')
-    news = New.objects.filter(category=category)
+    news = New.objects.filter(category=category).order_by('-publish_date')
     authors = Author.objects.all()
     images = Image.objects.all()
     return render(request, 'news.html',

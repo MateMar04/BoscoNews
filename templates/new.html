@@ -51,6 +51,8 @@
 
             {% if c_images == 1 %}
 
+                {% get_new_images new as images %}
+
                 <!-- CAROUSEL -->
                 <div class="container-fluid carousel-container">
                     <div id="carouselExample{{ new.id }}" class="carousel slide">
